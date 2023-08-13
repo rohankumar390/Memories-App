@@ -8,7 +8,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
-  console.log(`Server Running on Port: http://localhost:${PORT}`)
+  console.log(`Server Running on Port: https://localhost:${PORT}`)
 )
 
 app.use(bodyParser.json({ extended: true }));
@@ -21,15 +21,5 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
   .catch((error) => console.log(error.message));
 
 app.use('/post', postRoutes)
-
-// const CONNECTION_URL = 'mongodb+srv://javascript:javascript@cluster0.apiiupt.mongodb.net';
-
-
-
-
-// mongoose.connect()
-// .then(console.log('Connection Successful!'))
-// .catch(err => console.log(err))
-// mongoose.set('useFindAndModify', false);
 
 export default app;
